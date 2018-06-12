@@ -27,3 +27,16 @@ jQuery(document).ready(function() {
         }, 3500);
     });
 });
+
+// let btn = document.querySelectorAll("button.envoi");
+
+// let alert = function() {
+//     event.preventDefault();
+
+//     setTimeout(function() {
+//         document.getElementById('merci').innerHTML = "";
+//     }, 2000);
+// }
+
+
+// btn.addEventListener("click", alert)

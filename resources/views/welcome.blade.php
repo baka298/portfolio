@@ -7,7 +7,7 @@
             <div class="filtre">
                 <div class="containe p1">
                     <div class="row my-5">
-                            @if(session('message'))
+                        @if(session('message'))
                             @include('component.notification')
                         @endif
                         <div class="col-12 text-center my-5">

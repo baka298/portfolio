@@ -46,7 +46,7 @@
                         <input class="form-control" id="message" name="message" placeholder="Votre message" value="{{old('message')}}">
                     </div>
 
-                    <button id="form5" type="submit" class="btn btn-primary">Submit</button>
+                    <button id="form5" type="submit" class="btn btn-primary envoi">Submit</button>
                 </form>
             </div>
         </div>

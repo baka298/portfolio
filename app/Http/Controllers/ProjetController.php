@@ -126,10 +126,27 @@ class ProjetController extends Controller
         $projet->titre = $request->titre;
         $projet->contenu = $request->contenu;
         $projet->entreprise = $request->entreprise;
+        $resizesm = [
+            'image' => $request->image,
+            'taille' => 50,
+            'disk' =>'resizesm'
+        ];
+        $resizemd = [
+            'image' => $request->image,
+            'taille' => 200,
+            'disk' =>'resizemd'
+        ];
+        $resizel = [
+            'image' => $request->image,
+            'taille' => 500,
+            'disk' =>'resizel'
+        ];
 
         if($request->image != null){
             $this->intervention->imageDelete($request->image);
-            $projet->image = $this->intervention->imageStore($request->image);
+            $projet->image = $this->intervention->imageStore($resizesm);
+            $projet->image = $this->intervention->imageStore($resizemd);
+            $projet->image = $this->intervention->imageStore($resizel);
         }
 
         if($projet->save()){
