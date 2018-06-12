@@ -7,7 +7,7 @@ use App\Projet;
 use App\Events\contact;
 use App\Mail\ContactMail;
 use App\Http\Requests\ContactRequest;
-
+use App\User;
 use Mail;
 
 
@@ -17,7 +17,8 @@ class PageController extends Controller
     public function index()
     {
         $projets = Projet::get()->sortByDesc('created_at')->take(3);
-        return view('welcome',compact('projets'));
+        $user = User::find(1);
+        return view('welcome',compact('projets','user'));
     }
     public function projets()
     {

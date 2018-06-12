@@ -1,22 +1,26 @@
-<section class="container p3" id="contact">
+<section id="contact" class="clearfix">
+        <div class="container">
+            <div class="row">
+
         <div>
             <h1>
                 Formulaire de Contact
             </h1>
         </div>
         <div class="row" id="divform">
-            <div class="col-12">
+            <div class="col-md-8">
                 <form action="{{route('contact')}}" method="POST">
                     @csrf
                     <div class="row">
-                        <div class="col-6">
+                        <div class="form-group">
+                        <div class="col-md-6">
                                 @if($errors->has('prenom'))
                                 <div class="text-danger">{{$errors->first('prenom')}}</div>
                               @endif
                             <label for="prenom">Prénom:</label>
                             <input class="form-control" id="prenom" name="prenom" placeholder="votre prénom" value="{{old('prenom')}}">
                         </div>
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <label for="nom">Nom:</label>
                                 @if($errors->has('nom'))
                                     <div class="text-danger">{{$errors->first('nom')}}</div>
@@ -24,6 +28,8 @@
                             <input class="form-control" id="nom" name="nom" placeholder="Votre nom" value="{{old('nom')}}">
                         </div>
                     </div>
+                    </div>
+                    <br>
                     <div class="form-group">
                         <label for="email">Email:</label>
                             @if($errors->has('email'))
@@ -43,12 +49,15 @@
                             @if($errors->has('message'))
                                 <div class="text-danger">{{$errors->first('message')}}</div>
                             @endif
-                        <input class="form-control" id="message" name="message" placeholder="Votre message" value="{{old('message')}}">
+                            <textarea class="form-control" id="message" name="message" placeholder="Votre message" cols="30" rows="10">{{old('message')}}</textarea>
                     </div>
 
                     <button id="form5" type="submit" class="btn btn-primary envoi">Submit</button>
                 </form>
             </div>
         </div>
+    </div>
+
+    </div>
     </section>
 

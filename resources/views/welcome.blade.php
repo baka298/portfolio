@@ -1,35 +1,38 @@
-@extends('layouts.front')
 
+@extends('newlayout.app')
 
 @section('content')
 
-        <div class="backg mb-5">
-            <div class="filtre">
-                <div class="containe p1">
-                    <div class="row my-5">
-                        @if(session('message'))
-                            @include('component.notification')
-                        @endif
-                        <div class="col-12 text-center my-5">
-                            <h2 class="">PortFolio</h2>
-                            <h1 class="">Developpeur Web</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        @include('text.article')
-                   
-        {{-- @include('text.galerie') --}}
-        @include('component.projetfront')
-                    
-        @include('text.article2')
+    
+            <!-- Home Section
+          –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+          @include('component.home-section')
 
-        @include('component.skillbar')
-        
-        @include('text.team')
+            <!--/ Home Section-->
 
-        @include('section.formulaire')
+            <!-- About us
+          –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+          @include('component.aboutme')
+
+            <!--/ About us-->
+
+            <!-- Portfolio Section
+          –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+            @include('component.galerieprojet')
+
+            <!--/ Portfolio Section-->
+
+
+            <!-- Services Section
+          –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+          @include('component.listeservice')
+
+            <!--/ Services Section-->
+
+            <!-- Contact Section
+          –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+            {{-- @include('component.contactform') --}}
+            @include('section.formulaire')
         
+
 @endsection
