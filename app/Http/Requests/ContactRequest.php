@@ -27,7 +27,7 @@ class ContactRequest extends FormRequest
             'nom'=>'required|max:255',
             'prenom'=>'required|max:255',
             'email'=>'required|email',
-            'societe'=>'required|max:255',
+            'societe'=>'max:255',
             'message'=>'required|min:10'
         ];
     }

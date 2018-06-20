@@ -27,7 +27,7 @@
             <div class="text-danger">{{$errors->first('contenu')}}</div>
           @endforeach
             @endif
-    <textarea class="form-control {{$errors->has('contenu')?'border-danger':""}}" name="contenu" id="contenu" placeholder="mon contenu" rows="3">{{old('contenu',$projet->contenu)}}</textarea>
+    <textarea class="form-control {{$errors->has('contenu')?'border-danger':""}}" name="contenu" id="contenu" placeholder="mon contenu" rows="3">{!! old('contenu',$projet->contenu) !!}</textarea>
     </div>
     <div class="form-group">
         <label for="">Entreprise</label>
@@ -51,3 +51,12 @@
     <button type="submit">@lang('general.valid')</button>
 </form>
 @stop
+
+
+@section('js')
+  <script>
+      CKEDITOR.replace( 'contenu', {
+        extraPlugins : 'codesnippet'
+      } );
+  </script>
+@endsection

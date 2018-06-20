@@ -19,6 +19,7 @@
             @endif
     <input type="text" name="titre" id="titre" class="form-control" class="{{$errors->has('titre')?'border-danger':""}}" placeholder="mon text" aria-describedby="helpId" value="{{old('titre')}}">
     </div>
+		
 
     <div class="form-group">
       <label for="">Mon contenu</label>
@@ -27,7 +28,7 @@
             <div class="text-danger">{{$errors->first('contenu')}}</div>
           @endforeach
         @endif
-    <textarea class="form-control {{$errors->has('contenu')?'border-danger':""}}" name="contenu" id="contenu" placeholder="mon contenu" rows="3">{{old('contenu')}}</textarea>
+    <textarea id="editor" class="form-control {{$errors->has('contenu')?'border-danger':""}}" name="contenu" id="contenu" placeholder="mon contenu" rows="3">{{ old('contenu') }}</textarea>
     </div>
     <div class="form-group">
         <label for="">Entreprise</label>
@@ -48,4 +49,13 @@
       </div>
     <button type="submit">@lang('general.valid')</button>
 </form>
+
 @stop
+
+@section('js')
+  <script>
+      CKEDITOR.replace( 'contenu', {
+        extraPlugins : 'codesnippet'
+      } );
+  </script>
+@endsection

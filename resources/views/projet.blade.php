@@ -1,5 +1,6 @@
-@extends('layouts.front')
+@extends('newlayout.app(sansnav)')
 
-@section('content')
-    @include('component.projet')
-@endsection
+    @section('content')
+        @include('component.projet')
+    @endsection
+

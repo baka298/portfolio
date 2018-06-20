@@ -11,11 +11,11 @@
     <div class="card col-10">
         <div class="card-body">
             <p class="card-text"><small class="text-muted">TITRE :</small></p>
-          <h5 class="card-title">{{$projet->titre}}</h5>
+          <h5 class="card-title">{{ $projet->titre }}</h5>
           <p class="card-text"><small class="text-muted">CONTENU :</small></p>
-        <p class="card-text">{{$projet->contenu}}</p>
+        <p class="card-text">{!! $projet->contenu !!}</p>
         <p class="card-title"><small class="text-muted">ENTREPRISE :</small></p>
-          <h5 class="card-title">{{$projet->entreprise}}</h5>
+          <h5 class="card-title">{{ $projet->entreprise }}</h5>
         </div>
         @if($projet->image != null)
         <div>

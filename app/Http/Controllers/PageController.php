@@ -16,8 +16,9 @@ class PageController extends Controller
 {
     public function index()
     {
-        $projets = Projet::get()->sortByDesc('created_at')->take(3);
+        // $projets = Projet::get()->sortByDesc('created_at')->take(3);
         $user = User::find(1);
+        $projets = Projet::all();
         return view('welcome',compact('projets','user'));
     }
     public function projets()
